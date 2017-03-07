@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>凤凰视频</title>
+    <link rel="stylesheet" type="text/css" href="css/20161231.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+</head>
+<body>
+<!-- rem s -->
+<script>
+    (function (doc, win) {
+        var _root = doc.documentElement,
+            resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            resizeCallback = function () {
+                var clientWidth = _root.clientWidth,
+                    fontSize = 10*10;
+                if (!clientWidth) return;
+                if(clientWidth < 1080) {
+                    fontSize = 100*(clientWidth / 750);
+                } else {
+                    fontSize = 100*(1080 / 750);
+                }
+                _root.style.fontSize = fontSize + 'px';
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvent, resizeCallback, false);
+        doc.addEventListener('DOMContentLoaded', resizeCallback, false);
+    })(document, window);
+</script>
+<!-- rem e -->
+<!--head-->
+<div class="v-mobile-header">
+    <h1 class="i-logo clearfix"><a href="#" title="凤凰视频">凤凰视频</a></h1>
+    <div class="i-login clearfix">
+        <i class="i-login-search"></i>
+        <i class="i-login"></i>
+    </div>
+</div>
+<!--nav-->
+<div class="top-menu">
+    <div class="top-menu-inner">
+        <a href="#">首页</a>
+        <a href="#" class="cur">军事</a>
+        <a href="#">娱乐</a>
+        <a href="#">财经</a>
+        <a href="#">搞笑</a>
+        <a href="#">社会</a>
+        <a href="#">原创</a>
+    </div>
+</div>
+<!--banner-->
+<div class="focus clearfix">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+                <img src="temp/focus.jpg" alt="">
+                <h3>
+                    <span>推荐</span>
+                    韩国气功大师表演铁布衫失误 结果...
+                </h3>
+            </div>
+             <div class="swiper-slide">
+                 <img src="temp/focus.jpg" alt="">
+                 <h3>
+                     <span>推荐</span>
+                     韩国气功大师表演铁布衫失误 结果...
+                 </h3>
+             </div>
+             <div class="swiper-slide">
+             <img src="temp/focus.jpg" alt="">
+             <h3>
+                 <span>推荐</span>
+                 韩国气功大师表演铁布衫失误 结果...
+             </h3>
+         </div>
+             <div class="swiper-slide">
+             <img src="temp/focus.jpg" alt="">
+             <h3>
+                 <span>推荐</span>
+                 韩国气功大师表演铁布衫失误 结果...
+             </h3>
+         </div>-->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<!--logo-live-->
+<div class="outer clearfix">
+    <div class="inner">
+        <a href="#"><img src="images/png/资讯_w131h81.png" alt=""></a>
+        <img src="images/png/live_w60h28.png" alt="">
+    </div>
+    <div class="inner clearfix">
+        <a href="#"><img src="images/png/china_w131h81.png" alt=""></a>
+        <img src="images/png/live_w60h28.png" alt="">
+    </div>
+</div>
+<!--内容部分-->
+<div class="main"></div>
+
+<!--直播图-->
+<ul class="leftRight video">
+    <li class="leftImg clearfix thr-img">
+        <div class="rightText">
+            <a>探访里约奥运村容纳1.8万人探访里约奥运村容纳1.8万人</a>
+            <div class="i-img clearfix i-play">
+                <a href="#"><img src="images/i/bottom_w690h206.png" alt=""></a>
+                <div class="v-play"></div>
+            </div>
+            <div class="i-text thr-i i-text-play">
+                <span>进行中...</span>
+                <span>1分钟前</span>
+            </div>
+        </div>
+    </li>
+</ul>
+<script src="js/underscore-min.js"></script>
+<!--focusTamp-->
+<script type="text/template" id="focusTmp">
+    <%_.each(_focus,function(n){%>
+    <%var _this=n%>
+    <div class="swiper-slide">
+        <img src="<%=_this.thumbnail%>" alt="">
+        <h3>
+            <span>推荐</span>
+            <%=_this.title%>
+        </h3>
+    </div>
+    <%})%>
+</script>
+<!--mainTmp-->
+<script type="text/template" id="mainTmp">
+    <%_.each(_item,function(n){%>
+    <%var _this=n%>
+    <%if(!_this.thumbnail){%>
+    <!--纯文本-->
+    <ul class="leftRight">
+        <li class="leftImg clearfix">
+            <div class="rightText">
+                <a><%=_this.title%></a>
+                <div class="i-text clearfix text-i">
+                    <span><i class="i-time"></i><%=_this.updateTime%></span>
+                    <span><i class="i-num"></i><%=_this.commentsall%>万</span>
+                    <img src="images/png/zhuanti_w60h28.png" alt="">
+                </div>
+            </div>
+        </li>
+    </ul>
+    <%return false%>
+    <%}else if(_this.style.images){%>
+        <!--三小图-->
+        <ul class="leftRight three">
+        <li class="leftImg clearfix thr-img">
+        <div class="rightText">
+        <a><%=_this.title%></a>
+    <div class="i-img clearfix">
+        <a href="#"><img src="<%=_this.style.images[0]%>" alt=""></a>
+        <a href="#"><img src="<%=_this.style.images[1]%>" alt=""></a>
+        <a href="#"><img src="<%=_this.style.images[2]%>" alt=""></a>
+        </div>
+        <div class="i-text thr-i">
+        <span><%=_this.source%></span>
+        <span><%=_this.updateTime%></span>
+        <span><%=_this.commentsall%><i class="i-topic"></i></span>
+        <span><%=_this.comments%><i class="i-iNum"></i></span>
+        </div>
+        </div>
+        </li>
+        </ul>
+    <%return false%>
+    <%}else if(_this.type=='phvideo'){%>
+        <!--视频图-->
+        <ul class="leftRight video">
+        <li class="leftImg clearfix thr-img">
+        <div class="rightText">
+        <a><%=_this.title%></a>
+    <div class="i-img clearfix i-video">
+        <a href="#"><img src="<%=_this.thumbnail%>" alt=""></a>
+        <div class="mask">
+        <div class="play"></div>
+        <div class="time">00'02''</div>
+    </div>
+    </div>
+    <div class="i-text thr-i">
+        <span><%=_this.source%></span>
+        <span><%=_this.updateTime%></span>
+        <span><%=_this.commentsall%><i class="i-topic"></i></span>
+        </div>
+        </div>
+        </li>
+        </ul>
+    <%return false%>
+    <%}else{%>
+    <!--左图右文-->
+    <ul class="leftRight">
+        <li class="leftImg clearfix">
+            <a href="#"><img src="<%=_this.thumbnail%>" alt=""></a>
+            <div class="rightText">
+                <a><%=_this.title%></a>
+                <div class="i-text clearfix">
+                    <span><i class="i-time"></i><%=_this.updateTime%></span>
+                    <span><i class="i-num"></i><%=_this.commentsall%>万</span>
+                    <img src="images/png/zhuanti_w60h28.png" alt="">
+                </div>
+            </div>
+        </li>
+    </ul>
+    <%}%>
+    <%})%>
+</script>
+<script type="text/javascript">
+    var _focus;
+    $.ajax({
+        url: 'http://api.iclient.ifeng.com/ClientNews?id=SYLB10,SYDT10&gv=5.4.0&os=ios&uid=8jWzrXDWQeep2Nw4AZYzmHxkbneHy4Fj&callback=jQuery191037427085312083364_1483258003039&_=1483258003040',
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        success: function (data) {
+            for (i = 0; i < data.length; i++) {
+                if (data[i].type == 'focus') {
+                    var focusList = data[i].item;
+//                    console.log(_focus);
+                } else {
+                    var itemList = data[i].item;
+                    console.log(itemList);
+                }
+            }
+            _focus = focusList;
+            $('.swiper-wrapper').append(_.template($('#focusTmp').html(), _focus));
+            var myswiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination'
+            });
+            _item=itemList;
+            _item.forEach(function (item) {
+                item.updateTime=changeTime(item.updateTime);
+            });
+            $('.main').html(_.template($('#mainTmp').html(),_item));
+        }
+    });
+    //戳整理
+    function changeTime(time){
+        if(time){
+            var str=time;
+            var str1 =str.substr(5,2);
+            var str2 =str.substr(8,2);
+            return str=str1+'-'+str2;
+        }
+    }
+</script>
+
+</body>
+</html>

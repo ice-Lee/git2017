@@ -1,0 +1,148 @@
+body,dl,dt,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,input,textarea,p,table,th,td{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body{width:100%;font:12px/18px Arial,Helvetica,sans-serif;background:#fff}
+input,select,button,textarea{vertical-align:middle;font-size:12px;outline:none}
+ol,ul{list-style:none}img{border:0}em{font-style:normal}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+textarea{resize:none}
+a{outline:none;text-decoration:none;color:#464646}
+a:hover{text-decoration:underline;color:#464646}
+.clearfix{*zoom:1}
+.clearfix:after{content:" ";overflow:hidden;clear:both;display:block;height:0}
+
+/*head*/
+.v-mobile-header{
+    height: .94rem;
+    background: #f54343;
+}
+.v-mobile-header .i-logo{
+    float: left;
+    width: 2.2rem;
+    height:.46rem ;
+    margin: .2rem 0 0 .19rem;
+    text-indent: -999rem;
+}
+.v-mobile-header .i-logo a{
+    display: block;
+    width: 2.2rem;
+    height: .46rem;
+    background: url("../images/png/logo_w220h46.png") no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.v-mobile-header .i-login{
+    float: right;
+    width: .38rem;
+    height: .38rem;
+    margin: .25rem .2rem 0 0;
+}
+.v-mobile-header .i-login .i-login-search{
+    display: inline-block;
+    width: .38rem;
+    height: .38rem;
+    /*margin: .15rem .25rem 0 0 ;*/
+    background: url("../images/png/icon2_w38_38.png") no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+/*top-menu*/
+.top-menu{
+    /*width: 100%;*/
+    overflow:hidden ;
+    overflow-x:auto ;
+    -webkit-overflow-scrolling: touch;
+    /*make nav-bar have animation*/
+}
+.top-menu::-webkit-scrollbar{
+    display: none;
+}
+.top-menu-inner{
+    height: .8rem;
+    line-height: .8rem;
+    white-space: nowrap;
+    font-size: 0;
+    /*强制不折行*/
+}
+.top-menu-inner a{
+    display: inline-block;
+    height: .8rem;
+    line-height: .8rem;
+    width: 1.07rem;
+    text-align: center;
+    font-size: .34rem;
+    color: #6b7969;
+    text-decoration: none;
+}
+.top-menu-inner a.cur{
+    height: .75rem;
+    line-height: .75rem;
+    border-bottom: .05rem solid #f54343;
+    color: #f54343;
+}
+
+/*banner*/
+.focus{
+    width: 100%;
+    height: 4.42rem;
+    /*index2：伪类：before加载图片需要加上以下定位*/
+    /*position: relative;*/
+}
+.focus img{
+    width: 100%;
+    display: block;
+}
+.focus .swiper-slide h3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .6rem;
+    line-height: .6rem;
+    padding-left: .15rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: .33rem
+}
+.focus .swiper-slide h3 span {
+    background: #f54343;
+    font-size: .28rem;
+    color:#fff;
+    padding:0.03rem 0.06rem;
+    margin-right:0.1rem;
+}
+.focus .swiper-pagination{
+    position: absolute;
+    left: 50%;
+    width: 1.6rem;
+    height: .8rem;
+    bottom: .5rem;
+    /*index2:伪类：before加载图片*/
+    color: #bf9c8a;
+}
+.focus .swiper-pagination-bullet{
+    margin-right: .15rem;
+}
+.focus .swiper-pagination-bullet-active{
+    background: #fff;
+
+}
+
+/*index2-banner：before伪类的方式*/
+.swiper-container .swiper-slide:before,.swiper-wrapper:before {
+    display: block;
+    content: '';
+    padding-top: 56%
+}
+
+.swiper-container .cover {
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-repeat: no-repeat;
+    background-size:cover;
+    -webkit-background-size:cover;
+    background-position:center center;
+}
